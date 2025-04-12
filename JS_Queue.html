@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Queue</title>
+</head>
+<body>
+
+<section>
+  <div><img src="assets/person.gif"></div>
+  <div><img src="assets/ambulance.gif"></div>
+  <div><img src="assets/truck.gif"></div>
+  <div><img src="assets/biking.gif"></div>
+  <div><img src="assets/car.gif"></div>
+  <div id="place"><img src="assets/city.gif"></div>
+</section>
+
+<script>
+
+  let data = ["assets/person.gif", "assets/ambulance.gif", "assets/truck.gif", "assets/biking.gif", "assets/car.gif"];
+  document.getElementById("place").querySelector('img').style.width = "150px";
+
+  for (let i = 0; i < data.length; i++) {
+    document.getElementsByTagName('div')[i].innerHTML = `<img src="${data[i]}" style="width: 150px"/>`;
+  }
+
+  const updateLetters = () => {
+    let lastLetter = data.pop();
+    data.unshift(lastLetter);
+
+    for (let i = 0; i < data.length; i++) {
+      document.getElementsByTagName('div')[i].innerHTML = `<img src="${data[i]}" style="width: 150px"/>`;
+    }
+  }
+
+  document.getElementsByTagName('section')[0].style.display = 'flex';
+  document.getElementsByTagName('section')[0].style.justifyContent = 'space-around';
+
+  setInterval(updateLetters, 2000);
+
+
+</script>
+
+</body>
+</html>
