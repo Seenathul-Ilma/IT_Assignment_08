@@ -24,9 +24,9 @@
     document.getElementsByTagName('div')[i].innerHTML = `<img src="${data[i]}" style="width: 150px"/>`;
   }
 
-  const updateLetters = () => {
-    let lastLetter = data.pop();
-    data.unshift(lastLetter);
+  const updateGif = () => {
+    let lastGif = data.pop();
+    data.unshift(lastGif);
 
     for (let i = 0; i < data.length; i++) {
       document.getElementsByTagName('div')[i].innerHTML = `<img src="${data[i]}" style="width: 150px"/>`;
@@ -36,7 +36,7 @@
   document.getElementsByTagName('section')[0].style.display = 'flex';
   document.getElementsByTagName('section')[0].style.justifyContent = 'space-around';
 
-  setInterval(updateLetters, 2000);
+  setInterval(updateGif, 2000);
 
 
 </script>
